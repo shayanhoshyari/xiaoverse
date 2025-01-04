@@ -1,0 +1,16 @@
+
+{
+    "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
+    "ruff": {
+        "binaries": [
+            {
+                "kind": "archive",
+                "file": "ruff-aarch64-apple-darwin/ruff",
+                "url": "https://github.com/astral-sh/ruff/releases/download/0.8.5/ruff-aarch64-apple-darwin.tar.gz",
+                "sha256": "36043a503192fd0c4c37b3f4b9f4d4351a6a3b1734120f0c780b4b8dc4ebea4a",
+                "os": "macos",
+                "cpu": "arm64"
+            }
+        ]
+    }
+}

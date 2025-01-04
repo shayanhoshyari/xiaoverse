@@ -1,0 +1,13 @@
+
+--index-url https://pypi.org/simple/
+
+aiofiles
+click
+datamodel-code-generator
+pydantic
+ruamel.yaml
+jinja2
+
+# Dev tools
+ruff
+mypy

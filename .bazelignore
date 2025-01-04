@@ -1,0 +1,5 @@
+# This is its own module. Don't include in current module.
+./.venv
+
+# We download bazel here
+./.bazel-bin
