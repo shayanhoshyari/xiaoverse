@@ -44,10 +44,12 @@ use_repo(pip, "pypi")
 
 # ==== Go ====
 
+GO_VERSION = "1.23.3"
+
 go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
 go_sdk.download(
     name = "go_sdk",
-    version = "1.23.3",
+    version = GO_VERSION,
 )
 use_repo(go_sdk, "go_sdk")
 

@@ -56,6 +56,15 @@
             // Get file paths
             // strings bazel-bin/helloworld/helloworld_go_/helloworld_go
             "program": "./bazel-bin/helloworld/helloworld_go_/helloworld_go",
+            "substitutePath" : [
+                // How this works: https://github.com/golang/vscode-go/blob/master/docs/debugging.md#settings
+                // from: path in vscode, to: path in the compiled program
+                // to see the paths in the compiled program, run `strings bazel-bin/helloworld/helloworld_go_/helloworld_go`
+                {
+                    "from": "${workspaceFolder}",
+                    "to" : ""
+                },
+            ],
         }
     ]
 }

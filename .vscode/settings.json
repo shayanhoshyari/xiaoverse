@@ -18,4 +18,7 @@
     "go.gopath": "${workspaceFolder}/bazel-bin/go_tools/bin/go",
     "go.toolsGopath": "${workspaceFolder}/bazel-bin/go_tools/bin",
     "go.terminal.activateEnvironment": true,
+    "go.delveConfig": {
+        "debugAdapter": "dlv-dap",
+    }
 } 

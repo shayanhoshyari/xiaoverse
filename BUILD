@@ -1,6 +1,7 @@
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@buildifier_prebuilt//:rules.bzl", "buildifier")
 load("@gazelle//:def.bzl", "gazelle", "gazelle_test")
+load("@rules_python//python:defs.bzl", "py_binary")
 load("@rules_uv//uv:pip.bzl", "pip_compile")
 load("@rules_uv//uv:venv.bzl", "sync_venv")
 
@@ -8,6 +9,15 @@ exports_files(
     [
         "multitool.lock.json",
         "pyproject.toml",
+    ],
+)
+
+py_binary(
+    name = "m",
+    srcs = ["m.py"],
+    main = "m.py",
+    deps = [
+        "@pypi//click",
     ],
 )
 
