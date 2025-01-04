@@ -80,6 +80,7 @@ alias(
     actual = "@rules_go//go",
 )
 
+# WIP: get rid of this once we have a go_venv in m
 genrule(
     name = "go_tools",
     outs = [

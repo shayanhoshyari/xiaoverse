@@ -4,7 +4,7 @@ import click
 from pathlib import Path
 import os
 from collections.abc import Callable
-
+import shutil
 
 ROOT = Path(os.environ["MONOREPO_PATH"])
 
@@ -38,6 +38,23 @@ def _go_mod_tidy() -> None:
 
 def _go_get(package: str) -> None:
     _bazel("run", "@rules_go//go", "--", "get", package)
+
+def _go_venv() -> None:
+    # WIP working in progress
+    """
+    output_base_str = subprocess.check_output("./bazel", "info", "output_base", cwd=ROOT, text=True)
+    output_base_str = output_base_str.strip()
+    output_base = Path(output_base_str)
+
+    subprocess.check_output("./bazel", "query", "output_base", cwd=ROOT, text=True)
+
+    goroot = Path(ROOT / ".goroot")
+    gobin = goroot / "bin"
+
+    gobin.mkdir(exist_ok=True)
+
+    shutil.copy()
+    """
 
 def _py_lock() -> None:
     _bazel("run", "//:requirements.update", show_output=False)
