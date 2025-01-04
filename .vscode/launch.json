@@ -54,7 +54,8 @@
             // Change based on exec
             "args": [],
             // Get file paths
-            // strings bazel-bin/helloworld/helloworld_go_/helloworld_go
+            // ./bazel build <target>
+            // will print the output and make sure it is up to date.
             "program": "./bazel-bin/helloworld/helloworld_go_/helloworld_go",
             "substitutePath" : [
                 // How this works: https://github.com/golang/vscode-go/blob/master/docs/debugging.md#settings
