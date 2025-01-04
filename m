@@ -2,6 +2,8 @@
 
 # Main task runner.
 
+set -e
+
 yellow="\033[33m"
 reset="\033[00m"
 green="\033[32m"

@@ -11,6 +11,7 @@ go_library(
 go_binary(
     name = "helloworld_go",
     embed = [":helloworld_lib"],
+    visibility = ["//visibility:public"],
 )
 
 py_binary(

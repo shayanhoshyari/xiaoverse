@@ -1,3 +1,7 @@
 # Disallow some deprecated behaviour for safety.
 common --incompatible_strict_action_env
 common --incompatible_run_shell_command_string
+
+
+build --compilation_mode=dbg
+build --strip=never

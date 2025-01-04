@@ -9,26 +9,53 @@
     ],
     "configurations": [
         {
-            // Run bazel target in debugger.
+            // Run bazel python target in debugger.
             // Usage: when clicking on this, when prompted first pass
             // <target name> <args>
-            // e.g.
-            // If from command line you can do
-            // bazel run //models/colligo/models/build/apps:sleepy -- --replicas echo_v1 2
-            // For this rule pass the following:
-            // //models/colligo/models/build/apps:sleepy --replicas echo_v1 2
             "name": "Bazel Run: Python",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/.vscode/launch_target.py",
             "console": "integratedTerminal",
-            "args": ["${input:bazelRunArgs}"],
+            "args": [
+                "${input:bazelRunArgs}"
+            ],
             "env": {
                 // This is necessary so that the the debugger hits breakpoints in original
                 // source and not the symlinks in bazel output.
-                "PYDEVD_RESOLVE_SYMLINKS" : "1",
+                "PYDEVD_RESOLVE_SYMLINKS": "1",
             },
             "justMyCode": false,
         },
+        {
+            // WORK IN PROGRESS -- Does not work
+            // Run bazel go target in debugger.
+            // Usage: when clicking on this, when prompted first pass
+            // <target name> <args>
+            "name": "Bazel Run: Go",
+            "type": "go",
+            "mode": "debug",
+            "request": "launch",
+            "program": ".vscode/launch_target.go",
+            "console": "integratedTerminal",
+            "args": [
+                "${input:bazelRunArgs}"
+            ],
+            "debugAdapter": "dlv-dap",
+        },
+        {
+            // Sadly you need to change this from time to time to 
+            // get vscode run a go code in debugger.
+            "name": "Go debug executable",
+            "type": "go",
+            "mode": "exec",
+            "request": "launch",
+            "console": "integratedTerminal",
+            // Change based on exec
+            "args": [],
+            // Get file paths
+            // strings bazel-bin/helloworld/helloworld_go_/helloworld_go
+            "program": "./bazel-bin/helloworld/helloworld_go_/helloworld_go",
+        }
     ]
 }
