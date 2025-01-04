@@ -5,6 +5,8 @@
 package main
 
 import (
+	_ "unsafe"
+
 	_ "github.com/go-delve/delve/cmd/dlv"
 	_ "golang.org/x/tools/gopls"
 )

@@ -56,7 +56,10 @@
             // Get file paths
             // ./bazel build <target>
             // will print the output and make sure it is up to date.
-            "program": "./bazel-bin/helloworld/helloworld_go_/helloworld_go",
+
+            //"program": "./bazel-bin/helloworld/helloworld_go_/helloworld_go",
+            "program": "bazel-bin/go_tutorial/cmd/greet_error/greet_error_/greet_error",
+
             "substitutePath" : [
                 // How this works: https://github.com/golang/vscode-go/blob/master/docs/debugging.md#settings
                 // from: path in vscode, to: path in the compiled program

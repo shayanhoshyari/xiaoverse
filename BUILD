@@ -87,6 +87,7 @@ genrule(
         "go_tools/bin/go",
         "go_tools/bin/gopls",
         "go_tools/bin/objdump",
+        "go_tools/src",
     ],
     cmd = """
 cp $(location @com_github_go_delve_delve//cmd/dlv:dlv) $(location :go_tools/bin/dlv)
@@ -98,6 +99,7 @@ cp $(locations @go_sdk//:tools) $$(dirname $(location :go_tools/bin/objdump))
         "@com_github_go_delve_delve//cmd/dlv",
         "@go_sdk//:bin/go",
         "@go_sdk//:tools",
+        "@go_sdk//:src",
         "@org_golang_x_tools_gopls//:gopls",
     ],
 )

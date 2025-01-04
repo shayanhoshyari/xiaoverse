@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	greetings "gitlab.com/hooshi/DSA-practice/go_tutorial"
+	"gitlab.com/hooshi/DSA-practice/go_tutorial/greetings"
 )
 
 func main() {
