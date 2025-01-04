@@ -86,8 +86,8 @@ cp $(locations @go_sdk//:tools) $$(dirname $(location :go_tools/bin/objdump))
     """,
     tools = [
         "@com_github_go_delve_delve//cmd/dlv",
-        "@org_golang_x_tools_gopls//:gopls",
         "@go_sdk//:bin/go",
         "@go_sdk//:tools",
+        "@org_golang_x_tools_gopls//:gopls",
     ],
 )

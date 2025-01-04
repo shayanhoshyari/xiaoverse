@@ -11,6 +11,7 @@ go 1.23.3
 require (
 	github.com/go-delve/delve v1.24.0
 	golang.org/x/tools/gopls v0.17.1
+	rsc.io/quote v1.5.2
 )
 
 require (
@@ -47,4 +48,5 @@ require (
 	honnef.co/go/tools v0.5.1 // indirect
 	mvdan.cc/gofumpt v0.7.0 // indirect
 	mvdan.cc/xurls/v2 v2.5.0 // indirect
+	rsc.io/sampler v1.3.0 // indirect
 )

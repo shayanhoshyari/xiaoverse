@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "_vscode_lib",
+    srcs = ["launch_target.go"],
+    importpath = "gitlab.com/hooshi/DSA-practice/.vscode",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = ".vscode",
+    embed = [":_vscode_lib"],
+    visibility = ["//visibility:public"],
+)
