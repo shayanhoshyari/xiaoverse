@@ -19,3 +19,10 @@ go_test(
     embed = [":twosum_lib"],
     deps = ["@com_github_stretchr_testify//assert"],
 )
+
+py_test(
+    name = "twosum_py",
+    srcs = ["main.py"],
+    main = "main.py",
+    deps = ["@pypi//pytest"],
+)
