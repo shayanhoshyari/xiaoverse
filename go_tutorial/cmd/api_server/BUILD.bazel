@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "api_server_lib",
+    srcs = ["main.go"],
+    importpath = "gitlab.com/hooshi/DSA-practice/go_tutorial/cmd/api_server",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_gin_gonic_gin//:gin"],
+)
+
+go_binary(
+    name = "api_server",
+    embed = [":api_server_lib"],
+    visibility = ["//visibility:public"],
+)
