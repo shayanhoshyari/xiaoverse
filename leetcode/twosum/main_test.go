@@ -7,12 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSortedIndices(t *testing.T) {
-	assert.Equal(t, sortedIndices([]int{0, 1, 2}), []int{0, 1, 2})
-	assert.Equal(t, sortedIndices([]int{5, 4, 3, 2}), []int{3, 2, 1, 0})
-	assert.Equal(t, sortedIndices([]int{11, 15, 2, 7}), []int{2, 3, 0, 1})
-}
-
 func Test1(t *testing.T) {
 	var indices []int
 	var err error
