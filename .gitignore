@@ -3,5 +3,6 @@
 /.venv
 /.mypy_cache
 /.ruff_cache
+/.go
 
 .DS_Store
