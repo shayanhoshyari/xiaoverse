@@ -33,6 +33,13 @@ def _buildifier_check() -> None:
 def _bzl_mod_tidy() -> None:
     _bazel("mod", "tidy")
 
+def _bzl_test(target: str, verbose: bool) -> None:
+    if verbose:
+        _bazel("test", target, "--test_output=streamed")
+        return
+
+    _bazel("test", target)
+
 def _go_mod_tidy() -> None:
     _bazel("run", "@rules_go//go", "--", "mod", "tidy")
 
@@ -100,8 +107,16 @@ def lint() -> None:
 
 _wrap_cmd("buildifier", _buildifier)
 _wrap_cmd("buildifier.check", _buildifier_check)
-_wrap_cmd("bzl.mod.tidy", _bzl_mod_tidy)
 _wrap_cmd("gazelle", _gazelle)
+
+_wrap_cmd("bzl.mod.tidy", _bzl_mod_tidy)
+
+@main.command(name="bzl.test")
+@click.argument("target")
+@click.option("--verbose", is_flag=True)
+def bzl_test(target: str, verbose: bool) -> None:
+    _bzl_test(target=target, verbose=verbose)
+
 
 _wrap_cmd("go.mod.tidy", _go_mod_tidy)
 
