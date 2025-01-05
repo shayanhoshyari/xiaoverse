@@ -37,7 +37,7 @@ func (this *LRUCache) Print() {
 		return "nil"
 	}
 
-	fmt.Println("Memory Keys with Prev and Next:")
+	fmt.Println("-------")
 	for key, node := range this.memory {
 		prevKey := printKey(node.prev)
 		nextKey := printKey(node.next)
@@ -46,11 +46,17 @@ func (this *LRUCache) Print() {
 
 	fmt.Printf("Head Key: %s\n", printKey(this.head))
 	fmt.Printf("Tail Key: %s\n", printKey(this.tail))
+	fmt.Println("-------")
 }
 
 func (this *LRUCache) MoveFront(item *Node) {
 	fmt.Println("Moving", item.key, "to front")
 	this.Print()
+
+	if item == this.head {
+		fmt.Println("Already at front!")
+		return
+	}
 
 	// Store info
 	exHead := this.head
@@ -73,11 +79,17 @@ func (this *LRUCache) MoveFront(item *Node) {
 		exNext.prev = exPrev
 	}
 
-	if this.tail == item && exPrev != nil {
-		// If exPrev is nil we only have one item, do nothing!
-		fmt.Println("Key ", item.key, "was also marked as tail, updating to ", exPrev)
+	// When we moved last item to front.
+	if this.tail == item {
 		this.tail = exPrev
 	}
+	// When we only have one item.
+	if this.tail == nil {
+		fmt.Println("Setting tail to be the head - first run", this.head, this.tail)
+		this.tail = this.head
+	}
+
+	this.Print()
 }
 
 func (this *LRUCache) Get(key int) int {
@@ -130,12 +142,6 @@ func (this *LRUCache) Put(key int, value int) {
 
 	// Move item to front.
 	this.MoveFront(item)
-
-	// If first time, need to init tail too
-	if this.tail == nil {
-		fmt.Println("Setting tail to be the head - first run", this.head, this.tail)
-		this.tail = this.head
-	}
 
 }
 
@@ -245,4 +251,17 @@ func TestCaseE(t *testing.T) {
 	cache.Put(3, 1)
 	assert.Equal(t, cache.Get(2), -1)
 	assert.Equal(t, cache.Get(3), 1)
+}
+
+func TestCaseF(t *testing.T) {
+	cache := Constructor(2)
+
+	cache.Put(2, 1)
+	cache.Put(3, 2)
+	assert.Equal(t, cache.Get(3), 2)
+	assert.Equal(t, cache.Get(2), 1)
+	cache.Put(4, 3)
+	assert.Equal(t, cache.Get(2), 1)
+	assert.Equal(t, cache.Get(3), -1)
+	assert.Equal(t, cache.Get(4), 3)
 }
