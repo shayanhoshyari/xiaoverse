@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/merge-sorted-array
+# This solution is stupid! Just fill the array from the end :) 
 
 import pytest
 import sys
@@ -86,6 +87,7 @@ def merge(
     ]
 
     pprint("Merged so far: ", nums2.storage)
+    
 
 
 def merge_simple(x: list[int], y: list[int]) -> list[int]:
