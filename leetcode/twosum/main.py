@@ -1,4 +1,5 @@
 import pytest
+import sys
 
 
 def twoSum(nums: list[int], target: int) -> list[int]:
@@ -26,4 +27,4 @@ def test_twosum() -> None:
 
 
 if __name__ == "__main__":
-    pytest.main([__file__])
+    sys.exit(pytest.main([__file__]))

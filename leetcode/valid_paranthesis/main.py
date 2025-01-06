@@ -1,15 +1,17 @@
 import pytest
 from collections import deque
+import sys
 
 OPEN_TO_CLOSE = {
-    "{" : "}",
-    "[" : "]",
-    "(" : ")",
+    "{": "}",
+    "[": "]",
+    "(": ")",
 }
 
-CLOSE_TO_OPEN = {v : k for k, v in OPEN_TO_CLOSE.items()}
+CLOSE_TO_OPEN = {v: k for k, v in OPEN_TO_CLOSE.items()}
 
-def peek(values : deque[str]) -> str | None:
+
+def peek(values: deque[str]) -> str | None:
     if not values:
         return None
     result = values.pop()
@@ -17,7 +19,7 @@ def peek(values : deque[str]) -> str | None:
     return result
 
 
-def is_valid(s : str) -> bool:
+def is_valid(s: str) -> bool:
     open_parans = deque[str]()
     for char in s:
         # Case 1 : closing
@@ -49,5 +51,6 @@ def test_is_valid() -> None:
     assert not is_valid("[{()]")
     assert not is_valid("[")
 
+
 if __name__ == "__main__":
-    pytest.main([__file__])
+    sys.exit(pytest.main([__file__]))
