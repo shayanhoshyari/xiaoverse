@@ -18,9 +18,8 @@ def simplify_path(path: str) -> str:
             # this folder
             continue
         if part == "..":
-            if not processed:
-                raise ValueError("Invalid path, you want to paretn of root")
-            processed.pop(-1)
+            if len(processed) > 1:
+                processed.pop(-1)
             continue
         processed.append(part)
 
@@ -32,17 +31,19 @@ def simplify_path(path: str) -> str:
 
 
 def test_simplify_path() -> None:
-    simplify_path("/") == "/" 
-    simplify_path("/////") == "/" 
-    simplify_path("/a") == "/a" 
-    simplify_path("//a") == "/a" 
-    simplify_path("//a/") == "/a" 
-    simplify_path("//a/..") == "/" 
-    simplify_path("//a/b/..") == "/a" 
-    simplify_path("//a/../b") == "/b" 
-    simplify_path("//a/../b/c/d/.") == "/b/c/d" 
-    simplify_path("//a/../b//./././///c/d/.") == "/b/c/d" 
-    simplify_path("/.....") == "/....." 
+    assert simplify_path("/") == "/" 
+    assert simplify_path("/////") == "/" 
+    assert simplify_path("/a") == "/a" 
+    assert simplify_path("//a") == "/a" 
+    assert simplify_path("//a/") == "/a" 
+    assert simplify_path("//a/..") == "/" 
+    assert simplify_path("//a/b/..") == "/a" 
+    assert simplify_path("//a/../b") == "/b" 
+    assert simplify_path("//a/../b/c/d/.") == "/b/c/d" 
+    assert simplify_path("//a/../b//./././///c/d/.") == "/b/c/d" 
+    assert simplify_path("/.....") == "/....."
+    assert simplify_path("/./././././") == "/"
+    assert simplify_path("/../") == "/"
 
 if __name__ == "__main__":
     sys.exit(pytest.main(["-vv", __file__]))
