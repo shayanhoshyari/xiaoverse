@@ -212,5 +212,6 @@ _wrap_cmd("py.format", _py_format)
 def leetcode_new(name: str) -> None:
     shutil.copytree(ROOT / "leetcode/template", ROOT / "leetcode" / name)
 
+
 if __name__ == "__main__":
     main()

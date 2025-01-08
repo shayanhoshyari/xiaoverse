@@ -4,15 +4,18 @@ import pytest
 import sys
 import math
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
-def get_value(node : ListNode | None) -> float:
+
+def get_value(node: ListNode | None) -> float:
     if node is None:
         return math.inf
     return node.val
+
 
 def pprint(*args):
     print(*args)
@@ -39,16 +42,19 @@ def mergeTwoLists(list1: ListNode | None, list2: ListNode | None) -> ListNode | 
 
     return head.next
 
+
 # Test
 
-def make_list(values : list[int]) -> ListNode | None:
+
+def make_list(values: list[int]) -> ListNode | None:
     iter = head = ListNode()
     for value in values:
         iter.next = ListNode(value)
         iter = iter.next
     return head.next
 
-def infer_list(node : ListNode | None) -> list[int]:
+
+def infer_list(node: ListNode | None) -> list[int]:
     values = list[int]()
     iter = node
     while iter is not None:
@@ -56,15 +62,17 @@ def infer_list(node : ListNode | None) -> list[int]:
         iter = iter.next
     return values
 
-def easy_merge(a : list[int], b : list[int]) -> list[int]:
+
+def easy_merge(a: list[int], b: list[int]) -> list[int]:
     return infer_list(mergeTwoLists(make_list(a), make_list(b)))
+
 
 def test_A() -> None:
     assert easy_merge([], []) == []
     assert easy_merge([1], []) == [1]
     assert easy_merge([], [1]) == [1]
-    assert easy_merge([1], [2]) == [1,2]
-    assert easy_merge([1,3], [2,3]) == [1,2,3,3]
+    assert easy_merge([1], [2]) == [1, 2]
+    assert easy_merge([1, 3], [2, 3]) == [1, 2, 3, 3]
 
 
 if __name__ == "__main__":
