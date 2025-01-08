@@ -206,5 +206,11 @@ _wrap_cmd("py.lock", _py_lock)
 _wrap_cmd("py.venv", _py_venv)
 _wrap_cmd("py.format", _py_format)
 
+
+@main.command(name="leetcode.new")
+@click.argument("name")
+def leetcode_new(name: str) -> None:
+    shutil.copytree(ROOT / "leetcode/template", ROOT / "leetcode" / name)
+
 if __name__ == "__main__":
     main()
