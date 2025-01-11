@@ -5,7 +5,8 @@ import sys
 
 
 def is_valid(c: str) -> bool:
-    return (ord('a') <= ord(c) <= ord('z')) or (ord('0') <= ord(c) <= ord('9'))
+    return (ord("a") <= ord(c) <= ord("z")) or (ord("0") <= ord(c) <= ord("9"))
+
 
 def sanitize(value: str) -> str:
     return "".join([c for c in value.lower() if is_valid(c)])
@@ -28,18 +29,19 @@ def is_palindrome(value: str) -> bool:
     return True
 
 
-
 def test_is_valid() -> None:
-    assert is_valid('0')
-    assert is_valid('9')
-    assert is_valid('z')
-    assert is_valid('a')
-    assert is_valid('b')
-    assert not is_valid('X')
-    assert not is_valid('\n')
+    assert is_valid("0")
+    assert is_valid("9")
+    assert is_valid("z")
+    assert is_valid("a")
+    assert is_valid("b")
+    assert not is_valid("X")
+    assert not is_valid("\n")
+
 
 def test_sanitize() -> None:
     assert sanitize("A man, a plan, a canal: Panama") == "amanaplanacanalpanama"
+
 
 def test_is_palindrome() -> None:
     assert is_palindrome("")

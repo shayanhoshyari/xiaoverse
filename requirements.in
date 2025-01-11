@@ -1,14 +1,14 @@
 
 --index-url https://pypi.org/simple/
 
+
 aiofiles
 click
 datamodel-code-generator
-pydantic
-ruamel.yaml
 jinja2
-pytest
-
-# Dev tools
-ruff
 mypy
+pydantic
+pytest
+pytest-timeout
+ruamel.yaml
+ruff

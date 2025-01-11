@@ -4,18 +4,22 @@ import pytest
 import sys
 import math
 
-def get(values: list[int], idx : int) -> float:
+
+def get(values: list[int], idx: int) -> float:
     if idx < 0 or idx >= len(values):
         return -math.inf
     return values[idx]
 
-def is_max(values : list[int], idx: int) -> bool:
-    if get(values, idx) > get(values, idx - 1) and get(values, idx) > get(values, idx + 1):
+
+def is_max(values: list[int], idx: int) -> bool:
+    if get(values, idx) > get(values, idx - 1) and get(values, idx) > get(
+        values, idx + 1
+    ):
         return True
     return False
 
 
-def _peak_element(values : list[int], beg: int, end: int) -> int:
+def _peak_element(values: list[int], beg: int, end: int) -> int:
     if is_max(values, beg):
         return beg
 
@@ -33,7 +37,7 @@ def _peak_element(values : list[int], beg: int, end: int) -> int:
     return _peak_element(values, beg, mid)
 
 
-def peak_element(values : list[int]) -> int:
+def peak_element(values: list[int]) -> int:
     return _peak_element(values, 0, len(values))
 
 
