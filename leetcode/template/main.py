@@ -1,14 +1,17 @@
-# https://leetcode.com/problems/binary-search
+# https://leetcode.com/problems/template
 
 import pytest
 import sys
 from typing import Any
 
 
-def template(*args: Any) -> Any: ...
+def template(*args: Any) -> Any:
+    pass
 
 
-def test_template() -> None: ...
+@pytest.mark.timeout(3)
+def test_template() -> None:
+    pass
 
 
 if __name__ == "__main__":
