@@ -14,6 +14,11 @@
 
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 
+    "python.analysis.exclude": [
+        "**/bazel-*",
+        "**/.venv/**",
+    ],
+
     "go.goroot": "${workspaceFolder}/.go/goroot",
     "go.gopath": "${workspaceFolder}/.go/gopath",
     "go.toolsEnvVars": {
