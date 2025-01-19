@@ -1,4 +1,4 @@
-#https://www.facebook.com/careers/life/sample_interview_questions
+# https://www.facebook.com/careers/life/sample_interview_questions
 # Look and say
 
 import pytest
@@ -34,11 +34,13 @@ def next_seq(digits: list[int]) -> list[int]:
 
     return result
 
+
 def test_next_seq() -> None:
-    assert next_seq([1]) == [1,1]
-    assert next_seq([1,1]) == [2,1]
-    assert next_seq([1,1, 2]) == [2,1,1,2]
-    assert next_seq([1,1, 2, 2, 10]) == [2,1,2,2, 1, 10]
+    assert next_seq([1]) == [1, 1]
+    assert next_seq([1, 1]) == [2, 1]
+    assert next_seq([1, 1, 2]) == [2, 1, 1, 2]
+    assert next_seq([1, 1, 2, 2, 10]) == [2, 1, 2, 2, 1, 10]
+
 
 def main() -> None:
     try:
@@ -51,7 +53,6 @@ def main() -> None:
         print(" ".join(str(d) for d in digits))
         digits = next_seq(digits)
 
-        
 
 if __name__ == "__main__":
     if "DEMO" in os.environ:
