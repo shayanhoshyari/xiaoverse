@@ -48,6 +48,11 @@ def test_sorted_dict() -> None:
     assert c.bisect_left(13) == 3
     assert c.bisect_right(13) == 3
 
+    assert c.keys()[1] == 10
+
+    # Note: This is deprecated.
+    assert c.iloc[1] == 10
+
 
 if __name__ == "__main__":
     sys.exit(pytest.main(["-vv", *sys.argv[1:], __file__]))

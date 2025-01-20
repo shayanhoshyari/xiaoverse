@@ -535,7 +535,7 @@
         "bzlTransitiveDigest": "8dismvKl3NazfZqc4jBDroiSQpTXFAYc3D1V2mwsv0s=",
         "usagesDigest": "A3vDXikJi/gd/ZFDJH9jO3GgNuyrlj77/AoG3esMHIs=",
         "recordedFileInputs": {
-          "@@//requirements.lock.txt": "f1151ea22f0b5aa41d42546bf443f055974f838d5f3528ea170b708d9196de6b",
+          "@@//requirements.lock.txt": "5faace49bc460a3ce4e793e3ad06414c5fe1689a11de4ca1d99c63520f30b812",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_fuzzing+//fuzzing/requirements.txt": "ab04664be026b632a0d2a2446c4f65982b7654f5b6851d2f9d399a19b7242a5b",
           "@@rules_python+//tools/publish/requirements_darwin.txt": "2994136eab7e57b083c3de76faf46f70fad130bc8e7360a7fed2b288b69e79dc",
@@ -1013,6 +1013,19 @@
               "python_interpreter_target": "@@rules_python++python+python_3_13_host//:python",
               "repo": "pypi_313",
               "requirement": "sortedcontainers==2.4.0     --hash=sha256:25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88     --hash=sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"
+            }
+          },
+          "pypi_313_sortedcontainers_stubs": {
+            "repoRuleId": "@@rules_python+//python/private/pypi:whl_library.bzl%whl_library",
+            "attributes": {
+              "dep_template": "@pypi//{name}:{target}",
+              "extra_pip_args": [
+                "--index-url",
+                "https://pypi.org/simple/"
+              ],
+              "python_interpreter_target": "@@rules_python++python+python_3_13_host//:python",
+              "repo": "pypi_313",
+              "requirement": "sortedcontainers-stubs==2.4.2     --hash=sha256:6cdbcf9c71198729dd6c0a8a7dc9742768f25b49384b91965d716a9d16ca7b2a     --hash=sha256:c24e33877effa5a3eb85357112496ba33a0b681c05e0d5d3745664fd3be75d82"
             }
           },
           "pypi_313_typing_extensions": {
@@ -3477,6 +3490,7 @@
                 "ruamel_yaml": "{\"pypi_313_ruamel_yaml\":[{\"version\":\"3.13\"}]}",
                 "ruff": "{\"pypi_313_ruff\":[{\"version\":\"3.13\"}]}",
                 "sortedcontainers": "{\"pypi_313_sortedcontainers\":[{\"version\":\"3.13\"}]}",
+                "sortedcontainers_stubs": "{\"pypi_313_sortedcontainers_stubs\":[{\"version\":\"3.13\"}]}",
                 "typing_extensions": "{\"pypi_313_typing_extensions\":[{\"version\":\"3.13\"}]}"
               },
               "packages": [
@@ -3509,6 +3523,7 @@
                 "ruamel_yaml",
                 "ruff",
                 "sortedcontainers",
+                "sortedcontainers_stubs",
                 "typing_extensions"
               ],
               "groups": {}

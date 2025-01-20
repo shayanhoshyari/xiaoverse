@@ -13,3 +13,4 @@ pytest-timeout
 ruamel.yaml
 ruff
 sortedcontainers
+sortedcontainers-stubs
