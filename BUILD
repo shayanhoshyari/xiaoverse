@@ -3,7 +3,7 @@ load("@buildifier_prebuilt//:rules.bzl", "buildifier")
 load("@gazelle//:def.bzl", "gazelle", "gazelle_test")
 load("@rules_python//python:defs.bzl", "py_binary")
 load("@rules_uv//uv:pip.bzl", "pip_compile")
-load("@rules_uv//uv:venv.bzl", "sync_venv")
+load("@rules_uv//uv:venv.bzl", "create_venv")
 
 exports_files(
     [
@@ -38,7 +38,7 @@ write_file(
     ],
 )
 
-sync_venv(
+create_venv(
     name = "venv",
     destination_folder = ".venv",
     requirements_txt = "//:requirements.lock.txt",
