@@ -5,7 +5,7 @@
         "**/.bazel-bin": true,
         ".mypy_cache": true,
         "**/.venv": true,
-        ".go": true,
+        ".go/**": true,
         "**/.ruff_cache": true,
         "**/.mypy_cache": true,
     },
