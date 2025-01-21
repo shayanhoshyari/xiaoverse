@@ -5,7 +5,8 @@ import os
 from collections.abc import Callable
 import shutil
 
-ROOT = Path(os.environ["MONOREPO_PATH"])
+# Bazel sets this. m.py is meant to run with ./bazel run //:m or ./m (which wraps it)
+ROOT = Path(os.environ["BUILD_WORKSPACE_DIRECTORY"])
 
 green: str = "\033[32m"
 reset: str = "\033[00m"
