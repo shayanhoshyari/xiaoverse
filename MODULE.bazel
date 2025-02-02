@@ -3,14 +3,15 @@ rules_ai_ethos is meant to be the bazel rules used in the colligo-deploy
 The reason they are a separate module is that maybe we can move them to colligo sooner.
 """
 
-module(name = "rules_ai_ethos")
+module(name = "sh_practice")
 
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "gazelle", version = "0.40.0")
+bazel_dep(name = "rules_cc", version = "0.1.0")
+bazel_dep(name = "rules_go", version = "0.51.0-rc2")
 bazel_dep(name = "rules_multitool", version = "1.0.0")
 bazel_dep(name = "rules_python", version = "1.0.0")
 bazel_dep(name = "rules_uv", version = "0.45.0")
-bazel_dep(name = "rules_go", version = "0.51.0-rc2")
-bazel_dep(name = "gazelle", version = "0.40.0")
 
 bazel_dep(name = "buildifier_prebuilt", version = "7.3.1", dev_dependency = True)
 

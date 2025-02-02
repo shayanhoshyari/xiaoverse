@@ -16,6 +16,7 @@ pytest
 pytest-timeout
 ruamel.yaml
 ruff
+# sentencepiece
 sortedcontainers
 sortedcontainers-stubs
 tiktoken

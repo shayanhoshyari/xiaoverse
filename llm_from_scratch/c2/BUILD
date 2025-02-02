@@ -10,6 +10,8 @@ py_library(
     deps = [
         "@pypi//numpy",
         "@pypi//torch",
+        "@pypi//tiktoken",
+        "@pypi//sentencepiece",
     ],
 )
 
