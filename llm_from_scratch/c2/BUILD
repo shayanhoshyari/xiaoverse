@@ -7,6 +7,10 @@ py_library(
         "__init__.py",
         "the-verdict.txt",
     ],
+    deps = [
+        "@pypi//numpy",
+        "@pypi//torch",
+    ],
 )
 
 notebook_env(
