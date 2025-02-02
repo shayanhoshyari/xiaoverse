@@ -5,8 +5,12 @@
 aiofiles
 click
 datamodel-code-generator
+ipykernel
 jinja2
+jupyter
+matplotlib
 mypy
+numpy
 pydantic
 pytest
 pytest-timeout
@@ -14,3 +18,5 @@ ruamel.yaml
 ruff
 sortedcontainers
 sortedcontainers-stubs
+tiktoken
+torch

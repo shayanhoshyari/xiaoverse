@@ -26,6 +26,7 @@ pip_compile(
     name = "requirements",
     requirements_in = "requirements.in",
     requirements_txt = "requirements.lock.txt",
+    universal = True,
 )
 
 write_file(
