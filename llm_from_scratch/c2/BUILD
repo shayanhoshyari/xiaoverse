@@ -11,7 +11,7 @@ py_library(
         "@pypi//numpy",
         "@pypi//torch",
         "@pypi//tiktoken",
-        "@pypi//sentencepiece",
+        # "@pypi//sentencepiece",
     ],
 )
 
