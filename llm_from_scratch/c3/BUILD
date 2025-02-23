@@ -3,7 +3,12 @@ load("//llm_from_scratch:notebook.bzl", "notebook_env")
 
 py_library(
     name = "c3",
-    deps = [],
+    srcs = [
+        "__init__.py",
+    ],
+    deps = [
+        "@pypi//torch",
+    ],
 )
 
 notebook_env(
