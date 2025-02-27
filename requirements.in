@@ -1,7 +1,4 @@
-
---index-url https://pypi.org/simple/
-
-
+# sentencepiece
 aiofiles
 click
 datamodel-code-generator
@@ -14,9 +11,9 @@ numpy
 pydantic
 pytest
 pytest-timeout
+ray[serve]
 ruamel.yaml
 ruff
-# sentencepiece
 sortedcontainers
 sortedcontainers-stubs
 tiktoken

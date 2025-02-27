@@ -4,11 +4,13 @@ from pathlib import Path
 import os
 from collections.abc import Callable
 import shutil
+import sys
 
 # Bazel sets this. m.py is meant to run with ./bazel run //:m or ./m (which wraps it)
 ROOT = Path(os.environ["BUILD_WORKSPACE_DIRECTORY"])
 
 green: str = "\033[32m"
+red: str = "\033[31m"
 reset: str = "\033[00m"
 
 
@@ -28,6 +30,10 @@ def _bazel(*args: str, show_output: bool = True) -> None:
     subprocess.run(
         args, check=True, cwd=ROOT, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL
     )
+
+
+def _gazelle_python_manifest() -> None:
+    _bazel("run", "//:gazelle_python_manifest.update")
 
 
 def _gazelle() -> None:
@@ -135,7 +141,7 @@ def _go_venv() -> None:
 
 
 def _py_lock() -> None:
-    _bazel("run", "//:requirements.update", show_output=False)
+    _bazel("run", "//:requirements.update")
 
 
 def _py_venv() -> None:
@@ -170,6 +176,9 @@ def lint() -> None:
 
     # MODULE.bazel use_repo() update
     _bzl_mod_tidy()
+
+    # GZL python
+    _gazelle_python_manifest()
 
     # Go BUILD generation
     _gazelle()
@@ -215,4 +224,8 @@ def leetcode_new(name: str) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (Exception, KeyboardInterrupt) as e:
+        print(f"{red}Error:{reset} {e}")
+        sys.exit(-1)

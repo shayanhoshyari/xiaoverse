@@ -3,17 +3,18 @@ rules_ai_ethos is meant to be the bazel rules used in the colligo-deploy
 The reason they are a separate module is that maybe we can move them to colligo sooner.
 """
 
-module(name = "sh_practice")
+module(name = "dsa_practice")
 
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
-bazel_dep(name = "gazelle", version = "0.40.0")
+bazel_dep(name = "gazelle", version = "0.42.0")
 bazel_dep(name = "rules_cc", version = "0.1.1")
-bazel_dep(name = "rules_go", version = "0.51.0")
+bazel_dep(name = "rules_go", version = "0.53.0")
 bazel_dep(name = "rules_multitool", version = "1.0.0")
-bazel_dep(name = "rules_python", version = "1.0.0")
-bazel_dep(name = "rules_uv", version = "0.45.0")
+bazel_dep(name = "rules_python_gazelle_plugin", version = "1.1.0")
+bazel_dep(name = "rules_python", version = "1.1.0")
+bazel_dep(name = "rules_uv", version = "0.56.0")
 
-bazel_dep(name = "buildifier_prebuilt", version = "7.3.1", dev_dependency = True)
+bazel_dep(name = "buildifier_prebuilt", version = "8.0.1", dev_dependency = True)
 
 # ==== tools =====
 
@@ -24,7 +25,8 @@ use_repo(multitool, "multitool")
 # ==== Python ====
 
 # Toolchain - i.e. select the version
-PYTHON_VERSION = "3.13"
+# Many libs (e.g. ray) don't support 3.13 yet.
+PYTHON_VERSION = "3.12"
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(

@@ -1,4 +1,11 @@
 load("@rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@rules_python//python:defs.bzl", "py_test")
+
+py_test(
+    name = "main_test",
+    srcs = ["main_test.py"],
+    deps = ["@pypi//pytest"],
+)
 
 go_library(
     name = "twosum_lib",
@@ -18,11 +25,4 @@ go_test(
     srcs = ["main_test.go"],
     embed = [":twosum_lib"],
     deps = ["@com_github_stretchr_testify//assert"],
-)
-
-py_test(
-    name = "twosum_py",
-    srcs = ["main.py"],
-    main = "main.py",
-    deps = ["@pypi//pytest"],
 )

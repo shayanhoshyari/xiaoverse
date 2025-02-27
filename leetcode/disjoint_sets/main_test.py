@@ -3,6 +3,8 @@
 import pytest
 import sys
 
+import pytest_timeout  # noqa: F401
+
 
 class DisjointSet:
     def __init__(self, size: int) -> None:

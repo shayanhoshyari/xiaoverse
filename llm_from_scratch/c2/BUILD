@@ -9,8 +9,8 @@ py_library(
     ],
     deps = [
         "@pypi//numpy",
-        "@pypi//torch",
         "@pypi//tiktoken",
+        "@pypi//torch",
     ],
 )
 
@@ -19,4 +19,10 @@ notebook_env(
     deps = [
         ":c2",
     ],
+)
+
+py_library(
+    name = "c2_pybin",
+    srcs = ["__init__.py"],
+    visibility = ["//:__subpackages__"],
 )

@@ -1,5 +1,11 @@
 load("@rules_go//go:def.bzl", "go_binary", "go_library")
-load("@rules_python//python:defs.bzl", "py_binary")
+load("@rules_python//python:defs.bzl", "py_library")
+
+py_library(
+    name = "helloworld_py",
+    srcs = ["helloworld.py"],
+    visibility = ["//:__subpackages__"],
+)
 
 go_library(
     name = "helloworld_lib",
@@ -9,13 +15,7 @@ go_library(
 )
 
 go_binary(
-    name = "helloworld_go",
+    name = "helloworld",
     embed = [":helloworld_lib"],
     visibility = ["//visibility:public"],
-)
-
-py_binary(
-    name = "helloworld_py",
-    srcs = ["helloworld.py"],
-    main = "helloworld.py",
 )
