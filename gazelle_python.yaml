@@ -273,4 +273,4 @@ manifest:
     zmq: pyzmq
   pip_repository:
     name: pypi
-integrity: 14402e22c52a3efac0fdcc65159df02b462a64ac592a6e62ce6e1764b0d3e2f3
+integrity: d87d59b9d413cc71f3692e5d3d397ed27d994757bfbe74804e78d2880bc20e4e

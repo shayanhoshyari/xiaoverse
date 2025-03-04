@@ -424,7 +424,7 @@
         "bzlTransitiveDigest": "qvQ1fpt5Zt2oXMUJ9iGREXDWUJRGZj1mLE3pp6xKrBA=",
         "usagesDigest": "LVzg3yMlDhXn686stMKuBUQ6KCaLqbqTGJLwgBWZ+Ug=",
         "recordedFileInputs": {
-          "@@//requirements.lock.txt": "a37cfc34044f62168af8336ebe40968e750ddd1a6729b9911484bce9843c1fdd",
+          "@@//requirements.lock.txt": "3d07710662cd8ab6b0e9044290f775e61d379aba50067e10bbdcae0622d439d0",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_fuzzing+//fuzzing/requirements.txt": "ab04664be026b632a0d2a2446c4f65982b7654f5b6851d2f9d399a19b7242a5b",
           "@@rules_python++internal_deps+pypi__packaging//packaging-24.2.dist-info/RECORD": "91777a0e03c5978c8b440a2093cf44d1d13c859f97fb45ea4e5ec65182eed873",

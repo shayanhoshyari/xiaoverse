@@ -1,7 +1,9 @@
 # sentencepiece
+
 aiofiles
 click
 datamodel-code-generator
+debugpy
 ipykernel
 jinja2
 jupyter
