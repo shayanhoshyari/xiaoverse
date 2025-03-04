@@ -20,3 +20,4 @@ sortedcontainers
 sortedcontainers-stubs
 tiktoken
 torch
+transformers

@@ -32,10 +32,6 @@ def _bazel(*args: str, show_output: bool = True) -> None:
     )
 
 
-def _gazelle_python_manifest() -> None:
-    _bazel("run", "//:gazelle_python_manifest.update")
-
-
 def _gazelle() -> None:
     _bazel("run", "//:gazelle")
 
@@ -141,16 +137,14 @@ def _go_venv() -> None:
 
 
 def _py_lock() -> None:
+    _bazel("run", "//:ruff", "--", "format", str(ROOT))
+    _bazel("run", "//:ruff", "--", "check", "--fix", str(ROOT))
+    _bazel("run", "//:gazelle_python_manifest.update")
     _bazel("run", "//:requirements.update")
 
 
 def _py_venv() -> None:
     _bazel("run", "//:venv")
-
-
-def _py_format() -> None:
-    _bazel("run", "//:ruff", "--", "format", str(ROOT))
-    _bazel("run", "//:ruff", "--", "check", "--fix", str(ROOT))
 
 
 def _wrap_cmd(name: str, func: Callable[[], None]) -> None:
@@ -177,15 +171,11 @@ def lint() -> None:
     # MODULE.bazel use_repo() update
     _bzl_mod_tidy()
 
-    # GZL python
-    _gazelle_python_manifest()
+    # GZL python and other python stuff.
+    _py_lock()
 
     # Go BUILD generation
     _gazelle()
-
-    # Python!
-    _py_format()
-    _py_lock()
 
 
 _wrap_cmd("buildifier", _buildifier)
@@ -214,7 +204,6 @@ def go_get(package: str) -> None:
 
 _wrap_cmd("py.lock", _py_lock)
 _wrap_cmd("py.venv", _py_venv)
-_wrap_cmd("py.format", _py_format)
 
 
 @main.command(name="leetcode.new")

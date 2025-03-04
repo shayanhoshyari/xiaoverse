@@ -134,6 +134,7 @@ manifest:
     httpcore: httpcore
     httptools: httptools
     httpx: httpx
+    huggingface_hub: huggingface_hub
     idna: idna
     inflect: inflect
     iniconfig: iniconfig
@@ -236,6 +237,7 @@ manifest:
     rsa: rsa
     ruamel.yaml: ruamel.yaml
     ruff: ruff
+    safetensors: safetensors
     send2trash: Send2Trash
     setuptools: setuptools
     six: six
@@ -250,10 +252,13 @@ manifest:
     tiktoken: tiktoken
     tiktoken_ext.openai_public: tiktoken
     tinycss2: tinycss2
+    tokenizers: tokenizers
     torch: torch
     torchgen: torch
     tornado: tornado
+    tqdm: tqdm
     traitlets: traitlets
+    transformers: transformers
     typing_extensions: typing_extensions
     uri_template: uri_template
     urllib3: urllib3
@@ -273,4 +278,4 @@ manifest:
     zmq: pyzmq
   pip_repository:
     name: pypi
-integrity: d87d59b9d413cc71f3692e5d3d397ed27d994757bfbe74804e78d2880bc20e4e
+integrity: 5208c3a42fd1193b875642b3f9fc855c6217f40c1dacf1b3f56aace935ed468b
