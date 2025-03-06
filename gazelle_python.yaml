@@ -9,10 +9,13 @@ manifest:
     3204bda914b7f2c6f497__mypyc: mypy
     IPython: ipython
     PIL: pillow
+    adlfs: adlfs
+    aiobotocore: aiobotocore
     aiofiles: aiofiles
     aiohappyeyeballs: aiohappyeyeballs
     aiohttp: aiohttp
     aiohttp_cors: aiohttp_cors
+    aioitertools: aioitertools
     aiosignal: aiosignal
     annotated_types: annotated_types
     anyio: anyio
@@ -24,39 +27,55 @@ manifest:
     async_lru: async_lru
     attr: attrs
     attrs: attrs
+    azure.core: azure_core
+    azure.datalake: azure_datalake_store
+    azure.identity: azure_identity
+    azure.storage.blob: azure_storage_blob
     babel: babel
     black: black
     blackd: black
     bleach: bleach
     blib2to3: black
+    botocore: botocore
     bs4: beautifulsoup4
     cachetools: cachetools
     certifi: certifi
     cffi: cffi
     charset_normalizer: charset_normalizer
     click: click
+    cloudpickle: cloudpickle
     colorful: colorful
     comm: comm
     contourpy: contourpy
+    croniter: croniter
+    cryptography: cryptography
     cycler: cycler
+    dataclasses_json: dataclasses_json
     datamodel_code_generator: datamodel_code_generator
     dateutil: python_dateutil
     debugpy: debugpy
     decorator: decorator
     defusedxml: defusedxml
+    diskcache: diskcache
     distlib: distlib
     dns: dnspython
+    docker: docker
+    docs.conf: google_auth_oauthlib
+    docstring_parser: docstring_parser
     dotenv: python_dotenv
     email_validator: email_validator
     executing: executing
     fastapi: fastapi
     fastjsonschema: fastjsonschema
     filelock: filelock
+    flyteidl: flyteidl
+    flytekit: flytekit
     fontTools: fonttools
     fqdn: fqdn
     frozenlist: frozenlist
     fsspec: fsspec
     functorch: torch
+    gcsfs: gcsfs
     genson: genson
     google.api.annotations_pb2: googleapis_common_protos
     google.api.auth_pb2: googleapis_common_protos
@@ -93,8 +112,15 @@ manifest:
     google.api.visibility_pb2: googleapis_common_protos
     google.api_core: google_api_core
     google.auth: google_auth
+    google.cloud.client: google_cloud_core
+    google.cloud.environment_vars: google_cloud_core
+    google.cloud.exceptions: google_cloud_core
     google.cloud.extended_operations_pb2: googleapis_common_protos
     google.cloud.location.locations_pb2: googleapis_common_protos
+    google.cloud.obsolete: google_cloud_core
+    google.cloud.operation: google_cloud_core
+    google.cloud.storage: google_cloud_storage
+    google.cloud.version: google_cloud_core
     google.gapic.metadata.gapic_metadata_pb2: googleapis_common_protos
     google.logging.type.http_request_pb2: googleapis_common_protos
     google.logging.type.log_severity_pb2: googleapis_common_protos
@@ -106,6 +132,7 @@ manifest:
     google.longrunning.operations_proto_pb2: googleapis_common_protos
     google.oauth2: google_auth
     google.protobuf: protobuf
+    google.resumable_media: google_resumable_media
     google.rpc.code_pb2: googleapis_common_protos
     google.rpc.context.attribute_context_pb2: googleapis_common_protos
     google.rpc.context.audit_context_pb2: googleapis_common_protos
@@ -129,24 +156,36 @@ manifest:
     google.type.postal_address_pb2: googleapis_common_protos
     google.type.quaternion_pb2: googleapis_common_protos
     google.type.timeofday_pb2: googleapis_common_protos
+    google_auth_oauthlib: google_auth_oauthlib
+    google_crc32c: google_crc32c
     grpc: grpcio
+    grpc_status: grpcio_status
     h11: h11
     httpcore: httpcore
     httptools: httptools
     httpx: httpx
     huggingface_hub: huggingface_hub
     idna: idna
+    importlib_metadata: importlib_metadata
     inflect: inflect
     iniconfig: iniconfig
     ipykernel: ipykernel
     ipykernel_launcher: ipykernel
     ipywidgets: ipywidgets
+    isodate: isodate
     isoduration: isoduration
     isort: isort
     isympy: sympy
+    jaraco.classes: jaraco.classes
+    jaraco.context: jaraco.context
+    jaraco.functools: jaraco.functools
     jedi: jedi
     jinja2: jinja2
+    jmespath: jmespath
+    joblib: joblib
     json5: json5
+    jsonlines: jsonlines
+    jsonpickle: jsonpickle
     jsonpointer: jsonpointer
     jsonschema: jsonschema
     jsonschema_specifications: jsonschema_specifications
@@ -162,15 +201,26 @@ manifest:
     jupyterlab_pygments: jupyterlab_pygments
     jupyterlab_server: jupyterlab_server
     jupyterlab_widgets: jupyterlab_widgets
+    jwt: PyJWT
+    keyring: keyring
     kiwisolver: kiwisolver
+    markdown_it: markdown_it_py
     markupsafe: MarkupSafe
+    marshmallow: marshmallow
+    marshmallow_enum: marshmallow_enum
+    marshmallow_jsonschema: marshmallow_jsonschema
+    mashumaro: mashumaro
     matplotlib: matplotlib
     matplotlib_inline: matplotlib_inline
+    mdurl: mdurl
     mistune: mistune
+    more_itertools: more_itertools
     mpl_toolkits.axes_grid1: matplotlib
     mpl_toolkits.axisartist: matplotlib
     mpl_toolkits.mplot3d: matplotlib
     mpmath: mpmath
+    msal: msal
+    msal_extensions: msal_extensions
     msgpack: msgpack
     multidict: multidict
     mypy: mypy
@@ -184,6 +234,7 @@ manifest:
     notebook: notebook
     notebook_shim: notebook_shim
     numpy: numpy
+    oauthlib: oauthlib
     opencensus: opencensus_context
     opencensus.common.backports: opencensus
     opencensus.common.configuration: opencensus
@@ -208,10 +259,12 @@ manifest:
     pkg_resources: setuptools
     platformdirs: platformdirs
     pluggy: pluggy
+    portalocker: portalocker
     prometheus_client: prometheus_client
     prompt_toolkit: prompt_toolkit
     propcache: propcache
     proto: proto_plus
+    protoc_gen_openapiv2.options: protoc_gen_openapiv2
     psutil: psutil
     ptyprocess: ptyprocess
     pure_eval: pure_eval
@@ -227,17 +280,25 @@ manifest:
     pytest: pytest
     pytest_timeout: pytest_timeout
     pythonjsonlogger: python_json_logger
+    pytimeparse: pytimeparse
+    pytz: pytz
     ray: ray
     referencing: referencing
     regex: regex
     requests: requests
+    requests_oauthlib: requests_oauthlib
     rfc3339_validator: rfc3339_validator
     rfc3986_validator: rfc3986_validator
+    rich: rich
+    rich_click: rich_click
     rpds: rpds_py
     rsa: rsa
     ruamel.yaml: ruamel.yaml
     ruff: ruff
+    s3fs: s3fs
     safetensors: safetensors
+    samples: azure_datalake_store
+    scripts.readme-gen.readme_gen: google_auth_oauthlib
     send2trash: Send2Trash
     setuptools: setuptools
     six: six
@@ -247,6 +308,7 @@ manifest:
     soupsieve: soupsieve
     stack_data: stack_data
     starlette: starlette
+    statsd: statsd
     sympy: sympy
     terminado: terminado
     tiktoken: tiktoken
@@ -260,6 +322,7 @@ manifest:
     traitlets: traitlets
     transformers: transformers
     typing_extensions: typing_extensions
+    typing_inspect: typing_inspect
     uri_template: uri_template
     urllib3: urllib3
     uvicorn: uvicorn
@@ -275,7 +338,8 @@ manifest:
     wrapt: wrapt
     yaml: PyYAML
     yarl: yarl
+    zipp: zipp
     zmq: pyzmq
   pip_repository:
     name: pypi
-integrity: 5208c3a42fd1193b875642b3f9fc855c6217f40c1dacf1b3f56aace935ed468b
+integrity: 28cd8879f40076f209b8b680819d692565b671f6883b4acbc51a72da6fb585bd

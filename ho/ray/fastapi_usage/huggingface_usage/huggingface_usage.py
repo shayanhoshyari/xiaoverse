@@ -5,9 +5,10 @@ from typing import Dict
 from transformers import pipeline
 
 from ray import serve
-import torch # noqa: F401
+import torch  # noqa: F401
 
 import time
+
 
 # 1: Wrap the pretrained sentiment analysis model in a Serve deployment.
 @serve.deployment
@@ -32,6 +33,7 @@ def main() -> None:
     )
     # {'label': 'POSITIVE', 'score': 0.9998476505279541}
     time.sleep(100)
+
 
 if __name__ == "__main__":
     main()

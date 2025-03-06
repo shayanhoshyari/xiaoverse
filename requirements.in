@@ -4,6 +4,7 @@ aiofiles
 click
 datamodel-code-generator
 debugpy
+flytekit
 ipykernel
 jinja2
 jupyter

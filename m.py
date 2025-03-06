@@ -139,8 +139,8 @@ def _go_venv() -> None:
 def _py_lock() -> None:
     _bazel("run", "//:ruff", "--", "format", str(ROOT))
     _bazel("run", "//:ruff", "--", "check", "--fix", str(ROOT))
-    _bazel("run", "//:gazelle_python_manifest.update")
     _bazel("run", "//:requirements.update")
+    _bazel("run", "//:gazelle_python_manifest.update")
 
 
 def _py_venv() -> None:
