@@ -34,6 +34,6 @@
         // packages on path, the path binary itself does not :( .
         //
         // This is a workaround.
-        "${workspaceFolder}/.venv/lib/python3.13/site-packages"
+        "${workspaceFolder}/.venv/lib/python3.12/site-packages"
     ],
 } 

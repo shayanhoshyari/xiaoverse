@@ -2,7 +2,7 @@ load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@buildifier_prebuilt//:rules.bzl", "buildifier")
 load("@gazelle//:def.bzl", "gazelle", "gazelle_binary", "gazelle_test")
 load("@pypi//:requirements.bzl", "all_whl_requirements")
-load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+load("@rules_python//python:defs.bzl", "py_binary")
 load("@rules_python_gazelle_plugin//manifest:defs.bzl", "gazelle_python_manifest")
 load("@rules_python_gazelle_plugin//modules_mapping:def.bzl", "modules_mapping")
 load("@rules_uv//uv:pip.bzl", "pip_compile")
@@ -15,6 +15,8 @@ exports_files(
     ],
 )
 
+# Gazelle let me deal with m.py
+# gazelle:exclude m.py
 py_binary(
     name = "m",
     srcs = ["m.py"],
@@ -122,11 +124,4 @@ gazelle_python_manifest(
     modules_mapping = ":modules_map",
     pip_repository_name = "pypi",
     requirements = "//:requirements.lock.txt",
-)
-
-py_library(
-    name = "DSA-practice_pybin",
-    srcs = ["m.py"],
-    visibility = ["//:__subpackages__"],
-    deps = ["@pypi//click"],
 )
