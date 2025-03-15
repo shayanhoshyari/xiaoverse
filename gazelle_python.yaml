@@ -300,6 +300,7 @@ manifest:
     samples: azure_datalake_store
     scripts.readme-gen.readme_gen: google_auth_oauthlib
     send2trash: Send2Trash
+    sentencepiece: sentencepiece
     setuptools: setuptools
     six: six
     smart_open: smart_open
@@ -342,4 +343,4 @@ manifest:
     zmq: pyzmq
   pip_repository:
     name: pypi
-integrity: 28cd8879f40076f209b8b680819d692565b671f6883b4acbc51a72da6fb585bd
+integrity: d1ef8ec27c23056ec75eded2d864a1e25d97f5e3bec199ee8a730405e72ff551

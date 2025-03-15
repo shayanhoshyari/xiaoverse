@@ -1,10 +1,9 @@
-# sentencepiece
-
 aiofiles
 click
 datamodel-code-generator
 debugpy
 flytekit
+huggingface_hub
 ipykernel
 jinja2
 jupyter
@@ -17,6 +16,7 @@ pytest-timeout
 ray[serve]
 ruamel.yaml
 ruff
+sentencepiece
 sortedcontainers
 sortedcontainers-stubs
 tiktoken
