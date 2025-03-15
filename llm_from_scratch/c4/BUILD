@@ -8,6 +8,7 @@ py_library(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
+        "//llm_from_scratch/c3",
         "@pypi//torch",
     ],
 )
