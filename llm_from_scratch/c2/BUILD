@@ -7,6 +7,7 @@ py_library(
         "__init__.py",
         "the-verdict.txt",
     ],
+    visibility = ["//llm_from_scratch:__subpackages__"],
     deps = [
         "@pypi//numpy",
         "@pypi//tiktoken",
@@ -22,7 +23,11 @@ notebook_env(
 )
 
 py_library(
-    name = "c2_pybin",
+    name = "c2_py",
     srcs = ["__init__.py"],
     visibility = ["//:__subpackages__"],
+    deps = [
+        "@pypi//tiktoken",
+        "@pypi//torch",
+    ],
 )

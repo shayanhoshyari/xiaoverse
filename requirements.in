@@ -19,6 +19,8 @@ ruff
 sentencepiece
 sortedcontainers
 sortedcontainers-stubs
+tensorflow
 tiktoken
 torch
+tqdm
 transformers

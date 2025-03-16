@@ -6,12 +6,14 @@ py_library(
     srcs = [
         "__init__.py",
     ],
+    visibility = ["//llm_from_scratch:__subpackages__"],
     deps = [
-        "@pypi//torch",
-        "@pypi//tiktoken",
+        "//llm_from_scratch/c2:c2_py",
         "//llm_from_scratch/c4",
+        "@pypi//tensorflow",
+        "@pypi//tiktoken",
+        "@pypi//torch",
     ],
-    visibility = ["//:__subpackages__"],
 )
 
 notebook_env(

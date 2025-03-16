@@ -1,6 +1,8 @@
+from typing import TypedDict
+
 import torch
 from torch import nn
-from typing import TypedDict
+
 from llm_from_scratch.c3 import MultiHeadAttention
 
 
@@ -85,7 +87,7 @@ class GPTModel(nn.Module):
 
 
 def generate_text_simple(  # 1
-    model : torch.nn.Module, idx : int, max_new_tokens : int, context_size : int
+    model: torch.nn.Module, idx: int, max_new_tokens: int, context_size: int
 ):
     for _ in range(max_new_tokens):
         idx_cond = idx[:, -context_size:]  # 2

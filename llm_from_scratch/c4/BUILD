@@ -6,11 +6,10 @@ py_library(
     srcs = [
         "__init__.py",
     ],
-    visibility = ["//:__subpackages__"],
+    visibility = ["//llm_from_scratch:__subpackages__"],
     deps = [
         "//llm_from_scratch/c3",
         "@pypi//torch",
-        "@pypi//tiktoken",
     ],
 )
 
