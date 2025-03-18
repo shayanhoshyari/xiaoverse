@@ -22,5 +22,6 @@ sortedcontainers-stubs
 tensorflow
 tiktoken
 torch
+torch_geometric
 tqdm
 transformers

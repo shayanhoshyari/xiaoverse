@@ -334,6 +334,7 @@ manifest:
     tinycss2: tinycss2
     tokenizers: tokenizers
     torch: torch
+    torch_geometric: torch_geometric
     torchgen: torch
     tornado: tornado
     tqdm: tqdm
@@ -362,4 +363,4 @@ manifest:
     zmq: pyzmq
   pip_repository:
     name: pypi
-integrity: d0c53973e3f9304de8b1429fb9fe12924dd180d6a72295861e4d1c5c7b30553f
+integrity: 6eac2992fda82ee8bbad9f113c4d31e6617b1367f69403552be9e481cb733008
