@@ -1,3 +1,4 @@
+[lint]
 select = [
     # Enable Ruff's import sorting
     "I",

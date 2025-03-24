@@ -28,9 +28,12 @@ def _bazel(*args: str, show_output: bool = True) -> None:
         subprocess.run(args, check=True, cwd=ROOT)
         return
 
-    subprocess.run(
-        args, check=True, cwd=ROOT, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL
-    )
+    status = subprocess.run(args, cwd=ROOT, capture_output=True)
+    if status.returncode != 0:
+        print(f"{red}Command failed: {' '.join(args)}{reset}")
+        print(f"{red}STDERR:{reset}\n{status.stderr.decode()}")
+        print(f"{red}STDOUT:{reset}\n{status.stdout.decode()}")
+        raise ValueError("Command failed.")
 
 
 def _gazelle() -> None:
@@ -140,7 +143,7 @@ def _go_venv() -> None:
 def _py_lock() -> None:
     _bazel("run", "//:ruff", "--", "format", str(ROOT))
     _bazel("run", "//:ruff", "--", "check", "--fix", str(ROOT))
-    _bazel("run", "//:requirements.update")
+    _bazel("run", "//:requirements.update", show_output=False)
     _bazel("run", "//:gazelle_python_manifest.update")
 
 
