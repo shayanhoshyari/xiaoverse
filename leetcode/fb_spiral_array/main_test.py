@@ -1,10 +1,11 @@
 # https://www.facebook.com/careers/life/sample_interview_questions
 # Spiral array
 
-import pytest
-import sys
-import enum
 import dataclasses
+import enum
+import sys
+
+import pytest
 
 NOT_FILLED = -1
 

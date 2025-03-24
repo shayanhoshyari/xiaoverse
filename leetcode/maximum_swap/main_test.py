@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/maximum-swap
 
-import pytest
 import sys
+
+import pytest
 
 
 def get_digits(value: int) -> list[int]:

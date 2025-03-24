@@ -1,9 +1,10 @@
+from typing import Dict
+
+import debugpy  # noqa: F401
 import requests
 import starlette
-from typing import Dict
 from ray import serve
 from ray.serve.handle import DeploymentHandle
-import debugpy  # noqa: F401
 
 
 # 1. Define the models in our composition graph and an ingress that calls them.

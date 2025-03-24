@@ -1,6 +1,7 @@
 """A basic Flyte project template that uses a Dockerfile"""
 
 import typing
+
 from flytekit import task, workflow
 
 

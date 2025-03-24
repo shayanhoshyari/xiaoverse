@@ -1,6 +1,7 @@
+import time
+
 from ray import serve
 from ray.serve.handle import DeploymentHandle
-import time
 
 
 @serve.deployment

@@ -1,8 +1,9 @@
 # https://leetcode.com/problems/diameter-of-binary-tree
 
-import pytest
-import sys
 import dataclasses
+import sys
+
+import pytest
 
 
 class TreeNode:

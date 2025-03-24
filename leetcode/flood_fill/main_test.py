@@ -1,9 +1,10 @@
 # https://leetcode.com/problems/flood-fill
 
-import pytest
 import sys
 from collections import deque
 from collections.abc import Iterable
+
+import pytest
 
 Point = tuple[int, int]
 

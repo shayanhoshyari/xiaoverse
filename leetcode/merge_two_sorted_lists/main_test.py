@@ -1,8 +1,9 @@
 # https://leetcode.com/problems/merge-two-sorted-lists/
 
-import pytest
-import sys
 import math
+import sys
+
+import pytest
 
 
 class ListNode:

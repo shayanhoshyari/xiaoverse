@@ -1,8 +1,9 @@
 # https://leetcode.com/problems/merge-sorted-array
 # This solution is stupid! Just fill the array from the end :)
 
-import pytest
 import sys
+
+import pytest
 
 
 class Subarray:

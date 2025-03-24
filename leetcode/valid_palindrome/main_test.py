@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/valid-palindrome
 
-import pytest
 import sys
+
+import pytest
 
 
 def is_valid(c: str) -> bool:

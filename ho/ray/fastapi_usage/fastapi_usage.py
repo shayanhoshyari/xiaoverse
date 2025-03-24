@@ -1,7 +1,8 @@
+import time
+
 import requests
 from fastapi import FastAPI
 from ray import serve
-import time
 
 # 1: Define a FastAPI app and wrap it in a deployment with a route handler.
 app = FastAPI()

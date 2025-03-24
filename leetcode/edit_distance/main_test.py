@@ -2,9 +2,10 @@
 
 # I messed up indexing e :(
 
-import pytest
 import sys
 from collections.abc import Iterable
+
+import pytest
 
 VERBOSE = False
 

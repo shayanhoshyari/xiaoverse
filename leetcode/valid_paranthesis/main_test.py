@@ -1,6 +1,7 @@
-import pytest
-from collections import deque
 import sys
+from collections import deque
+
+import pytest
 
 OPEN_TO_CLOSE = {
     "{": "}",

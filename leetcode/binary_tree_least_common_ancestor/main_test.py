@@ -9,9 +9,10 @@ According to the definition of LCA on Wikipedia:
  in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
 """
 
-import pytest
-import sys
 import dataclasses
+import sys
+
+import pytest
 
 
 class TreeNode:

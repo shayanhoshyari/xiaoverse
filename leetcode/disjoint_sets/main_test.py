@@ -1,8 +1,8 @@
 # Union find, or Disjoint sets
 
-import pytest
 import sys
 
+import pytest
 import pytest_timeout  # noqa: F401
 
 

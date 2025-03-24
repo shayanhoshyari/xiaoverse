@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/simplify-path
 
-import pytest
 import sys
+
+import pytest
 
 SELF = "."
 

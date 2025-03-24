@@ -1,8 +1,9 @@
 # https://leetcode.com/problems/find-peak-element
 
-import pytest
-import sys
 import math
+import sys
+
+import pytest
 
 
 def get(values: list[int], idx: int) -> float:

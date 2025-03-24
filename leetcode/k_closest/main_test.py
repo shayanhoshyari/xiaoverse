@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/k-closest-points-to-origin
 
-import pytest
-import sys
 import heapq
+import sys
 
+import pytest
 
 Point = tuple[int, int]
 

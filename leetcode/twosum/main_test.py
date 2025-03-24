@@ -1,5 +1,6 @@
-import pytest
 import sys
+
+import pytest
 
 
 def twoSum(nums: list[int], target: int) -> list[int]:

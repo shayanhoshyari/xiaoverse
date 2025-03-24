@@ -1,13 +1,11 @@
-import requests
-from starlette.requests import Request
+import time
 from typing import Dict
 
-from transformers import pipeline
-
-from ray import serve
+import requests
 import torch  # noqa: F401
-
-import time
+from ray import serve
+from starlette.requests import Request
+from transformers import pipeline
 
 
 # 1: Wrap the pretrained sentiment analysis model in a Serve deployment.

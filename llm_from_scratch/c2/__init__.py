@@ -1,9 +1,9 @@
-from typing import Protocol
 from pathlib import Path
+from typing import Protocol
 
-import torch
 import tiktoken
-from torch.utils.data import Dataset, DataLoader
+import torch
+from torch.utils.data import DataLoader, Dataset
 
 VERDICT_PATH = Path(__file__).with_name("the-verdict.txt")
 

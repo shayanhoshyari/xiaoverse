@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/insert-interval/description/
 
-import pytest
 import sys
 
+import pytest
 
 Interval = tuple[int, int]
 

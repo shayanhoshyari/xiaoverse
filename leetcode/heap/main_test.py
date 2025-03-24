@@ -15,9 +15,10 @@ Reason:
 Here we assume we are working with a mean heap
 """
 
-import pytest
-import sys
 import random
+import sys
+
+import pytest
 
 
 def is_heap(heap: list[int]) -> bool:

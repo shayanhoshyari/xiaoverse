@@ -2,9 +2,10 @@
 We are sorting big -> small.
 """
 
-import pytest
-import sys
 import random
+import sys
+
+import pytest
 
 
 def pivot(values: list[int], lo: int, hi: int, pv: int) -> int:

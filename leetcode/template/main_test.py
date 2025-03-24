@@ -1,8 +1,10 @@
 # https://leetcode.com/problems/template
 
-import pytest
 import sys
 from typing import Any
+
+import pytest
+import pytest_timeout  # noqa
 
 
 def template(*args: Any) -> Any:

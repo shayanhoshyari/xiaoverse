@@ -1,10 +1,11 @@
-import click
-import subprocess
-from pathlib import Path
 import os
-from collections.abc import Callable
 import shutil
+import subprocess
 import sys
+from collections.abc import Callable
+from pathlib import Path
+
+import click
 
 # Bazel sets this. m.py is meant to run with ./bazel run //:m or ./m (which wraps it)
 ROOT = Path(os.environ["BUILD_WORKSPACE_DIRECTORY"])

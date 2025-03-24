@@ -1,9 +1,10 @@
 # https://www.facebook.com/careers/life/sample_interview_questions
 # Look and say
 
-import pytest
-import sys
 import os
+import sys
+
+import pytest
 
 
 def next_seq(digits: list[int]) -> list[int]:

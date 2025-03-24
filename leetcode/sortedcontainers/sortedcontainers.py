@@ -1,9 +1,10 @@
 # https://www.facebook.com/careers/life/sample_interview_questions
 # Spiral array
 
-import pytest
 import sys
-from sortedcontainers import SortedList, SortedDict
+
+import pytest
+from sortedcontainers import SortedDict, SortedList
 
 
 @pytest.mark.timeout(3)

@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/binary-search
 
-import pytest
 import sys
+
+import pytest
 
 
 def search_impl(nums: list[int], target: int, beg: int, end: int) -> int:

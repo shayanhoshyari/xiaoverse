@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 
-import pytest
 import sys
+
+import pytest
 
 
 def max_profit(prices: list[float]) -> float:
