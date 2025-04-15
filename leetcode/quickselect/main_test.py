@@ -2,7 +2,6 @@
 
 import random
 import sys
-from typing import Any
 
 import pytest
 import pytest_timeout  # noqa

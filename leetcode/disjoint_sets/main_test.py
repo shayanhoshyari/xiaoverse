@@ -9,9 +9,7 @@ import pytest_timeout  # noqa: F401
 class DisjointSet:
     def __init__(self, size: int) -> None:
         """Initialize the disjoint set with a given size."""
-        self.parent = [
-            i for i in range(size)
-        ]  # Each element is its own parent initially
+        self.parent = list(range(size))  # Each element is its own parent initially
         self.rank = [0] * size  # Rank is used for union by rank
 
     def find(self, x: int) -> int:

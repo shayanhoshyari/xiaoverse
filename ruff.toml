@@ -1,5 +1,17 @@
 [lint]
 select = [
-    # Enable Ruff's import sorting
-    "I",
+    
+    "I", # import sorting
+    "F", # unused imports
 ]
+
+
+[lint.isort]
+known-first-party = [
+    "hello_world",
+    "ho",
+    "leetcode",
+    "llm_from_scratch",
+    "recommender", 
+]
+detect-same-package = false
