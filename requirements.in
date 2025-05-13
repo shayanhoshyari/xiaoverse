@@ -25,3 +25,5 @@ torch
 torch_geometric
 tqdm
 transformers
+types-requests
+uvicorn

@@ -399,10 +399,10 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "hmBAJvkmrK8+Y4qEUZXmSX6Cvx450pEmwF4abQcicas=",
+        "bzlTransitiveDigest": "CJ/x3uhjnLF62H6sJcFVHb5KXmEXjYdB8KdopOwBZxo=",
         "usagesDigest": "LVzg3yMlDhXn686stMKuBUQ6KCaLqbqTGJLwgBWZ+Ug=",
         "recordedFileInputs": {
-          "@@//requirements.lock.txt": "92956594f313fc4ef0fe05bff96db4a7fba21acfddad6663dda8c955846a6edd",
+          "@@//requirements.lock.txt": "9d644cf10f30ea13206bb000e97ba1fc48ea9bf0793fffeaaacd999ae484ef0c",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_fuzzing+//fuzzing/requirements.txt": "ab04664be026b632a0d2a2446c4f65982b7654f5b6851d2f9d399a19b7242a5b",
           "@@rules_python++internal_deps+pypi__packaging//packaging-24.2.dist-info/RECORD": "91777a0e03c5978c8b440a2093cf44d1d13c859f97fb45ea4e5ec65182eed873",
@@ -3849,6 +3849,19 @@
               "requirement": "types-python-dateutil==2.9.0.20241206 --hash=sha256:18f493414c26ffba692a72369fea7a154c502646301ebfe3d56a04b3767284cb --hash=sha256:e248a4bc70a486d3e3ec84d0dc30eec3a5f979d6e7ee4123ae043eedbb987f53"
             }
           },
+          "pypi_312_types_requests": {
+            "repoRuleId": "@@rules_python+//python/private/pypi:whl_library.bzl%whl_library",
+            "attributes": {
+              "dep_template": "@pypi//{name}:{target}",
+              "extra_pip_args": [
+                "--index-url",
+                "https://pypi.org/simple"
+              ],
+              "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
+              "repo": "pypi_312",
+              "requirement": "types-requests==2.32.0.20250328 --hash=sha256:72ff80f84b15eb3aa7a8e2625fffb6a93f2ad5a0c20215fc1dcfa61117bcb2a2 --hash=sha256:c9e67228ea103bd811c96984fac36ed2ae8da87a36a633964a21f199d60baf32"
+            }
+          },
           "pypi_312_typing_extensions": {
             "repoRuleId": "@@rules_python+//python/private/pypi:whl_library.bzl%whl_library",
             "attributes": {
@@ -6773,6 +6786,7 @@
                 "transformers": "{\"pypi_312_transformers\":[{\"version\":\"3.12\"}]}",
                 "triton": "{\"pypi_312_triton\":[{\"version\":\"3.12\"}]}",
                 "types_python_dateutil": "{\"pypi_312_types_python_dateutil\":[{\"version\":\"3.12\"}]}",
+                "types_requests": "{\"pypi_312_types_requests\":[{\"version\":\"3.12\"}]}",
                 "typing_extensions": "{\"pypi_312_typing_extensions\":[{\"version\":\"3.12\"}]}",
                 "typing_inspect": "{\"pypi_312_typing_inspect\":[{\"version\":\"3.12\"}]}",
                 "uri_template": "{\"pypi_312_uri_template\":[{\"version\":\"3.12\"}]}",
@@ -7028,6 +7042,7 @@
                 "traitlets",
                 "transformers",
                 "types_python_dateutil",
+                "types_requests",
                 "typing_extensions",
                 "typing_inspect",
                 "uri_template",
