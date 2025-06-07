@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  # so the CI bazel is used.
+  CI: "1"
+
 jobs:
   main:
 
@@ -14,6 +18,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - uses: bazel-contrib/setup-bazel@0.15.0
+      with:
+        disk-cache: ${{ github.workflow }}
+        bazelisk-cache: true
+        repository-cache: true
 
     - name: Build
       run: ./bazel build ...

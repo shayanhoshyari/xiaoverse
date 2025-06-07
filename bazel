@@ -91,4 +91,10 @@ install_and_run_tool() {
   exec "${tool_executable}" "$@"
 }
 
-install_and_run_tool bazelisk "$BAZELISK_VERSION" "$@"
+if [[ "${CI:-}" == "1" ]]; then
+    # Code to run in CI environment
+    bazel "$@"
+else
+    # Code to run in non-CI environment
+    install_and_run_tool bazelisk "$BAZELISK_VERSION" "$@"
+fi
