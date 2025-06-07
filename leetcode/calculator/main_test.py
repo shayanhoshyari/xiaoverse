@@ -27,7 +27,7 @@ def evalualte(v1: int, v2: int, op: str) -> int:
 def calculate_basic(tokens: list[Token]) -> int:
     """
     Given a set of clean tokens, like [-, 1, +, 2, *, 1, 2, 3], returns the answer
-    Assumes the input does not have any paranthesis
+    Assumes the input does not have any parentheses
     """
     # If starts with char add a trailing 0
     if not isinstance(tokens[0], int):
