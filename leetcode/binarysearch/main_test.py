@@ -16,7 +16,7 @@ def search_impl(nums: list[int], target: int, beg: int, end: int) -> int:
     if target >= nums[mid]:
         return search_impl(nums, target, mid, end)
     else:
-        return search_impl(nums, target, 0, mid)
+        return search_impl(nums, target, beg, mid)
 
 
 def search(nums: list[int], target: int) -> int:
@@ -37,6 +37,13 @@ def test_search() -> None:
     assert search([1, 2, 3, 4], 3) == 2
     assert search([1, 2, 3, 4], 2) == 1
     assert search([1, 2, 3, 4], 1) == 0
+
+
+def test_search_impl_subrange() -> None:
+    nums = [0, 1, 2, 3, 4]
+    # searching within a subrange should not return indexes outside that range
+    assert search_impl(nums, 1, 2, 5) == -1
+    assert search_impl(nums, 3, 2, 5) == 3
 
 
 if __name__ == "__main__":
