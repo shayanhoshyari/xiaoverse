@@ -9,6 +9,7 @@ on:
 jobs:
   main:
 
+    # This is personal project only tested on macos.
     runs-on: macos-latest
 
     steps:
