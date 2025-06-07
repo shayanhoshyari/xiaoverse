@@ -12,7 +12,7 @@ Reason:
   left(d, r) = (d+1, 2*r)
   right(d, r) = (d+1, 2*r + 1)
 
-Here we assume we are working with a mean heap
+Here we assume we are working with a min heap
 """
 
 import random

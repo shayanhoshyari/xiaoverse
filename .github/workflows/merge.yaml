@@ -1,0 +1,18 @@
+name: Premerge Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run static checks
+      run: ./m lint
+    - name: Run tests
+      run: ./bazel test ...
